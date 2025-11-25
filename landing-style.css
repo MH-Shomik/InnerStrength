@@ -1,0 +1,527 @@
+/* =================================================================
+   STYLESHEET for Inner Strength Landing Page (Single Theme)
+   =================================================================
+   - New Color Palette Applied
+   - All Dark Mode Styles Removed
+   - Focused on High Contrast and Readability
+   =================================================================
+*/
+
+/* --- 1. Base & Font Styles --- */
+* {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+/* UPDATED: Body with new color scheme */
+body {
+  font-family: "Inter", sans-serif;
+  /* Colors are now applied via Tailwind config/classes */
+  line-height: 1.6;
+  letter-spacing: -0.3px;
+}
+
+.heading-font {
+  font-family: "Playfair Display", serif;
+  letter-spacing: -0.5px;
+}
+
+/* 1. HERO HEADLINE: Deep depth with a bright 'shimmer' center */
+.gradient-text-blue {
+  background: linear-gradient(
+    120deg,         /* Tilted angle looks more dynamic than 90deg */
+    #2b5876 0%,     /* Deep Navy/Slate */
+    #4e4376 25%,    /* Slight indigo for depth */
+    #00c6ff 50%,    /* Bright Cyan center (The Shine) */
+    #4e4376 75%,    /* Back to indigo */
+    #2b5876 100%    /* Back to Deep Navy */
+  );
+  background-size: 300% auto; /* Larger size makes the animation smoother */
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  text-fill-color: transparent;
+  font-weight: 800; /* Made slightly bolder for hero impact */
+  letter-spacing: -0.02em; /* Tightens large text for a modern look */
+  animation: gradient-flow 6s linear infinite; /* Slowed down for elegance */
+  filter: drop-shadow(0 2px 10px rgba(60, 120, 177, 0.3)); /* Subtle glow */
+}
+
+/* 2. BUTTON TEXT: High energy, electric blues for "Click Me" appeal */
+.gradient-text-blue2 {
+  background: linear-gradient(
+    90deg,
+    #2E3192 0%,     /* Strong Royal Blue */
+    #1BFFFF 50%,    /* Electric Cyan center */
+    #2E3192 100%    /* Back to Royal Blue */
+  );
+  background-size: 200% auto;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  text-fill-color: transparent;
+  font-weight: 700;
+  text-transform: uppercase; /* Often looks better on buttons */
+  letter-spacing: 0.05em;    /* Improves readability on small button text */
+  animation: gradient-flow 3s linear infinite; /* Faster speed for high energy */
+}
+
+/* REQUIRED ANIMATION KEYFRAMES */
+@keyframes gradient-flow {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}s
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-weight: 700;
+  letter-spacing: -0.4px;
+}
+
+
+
+/* --- 3. Particle Background --- */
+#particles-js {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  opacity: 0.6;
+  transition: opacity 0.5s ease-out;
+}
+
+/* --- 4. Scroll Progress Bar --- */
+#scroll-progress-bar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 3px;
+  background: linear-gradient(90deg, #8AAEE0 0%, #638ECB 50%, #B1C9EF 100%);
+  width: 0%;
+  z-index: 10000;
+  transition: width 0.1s ease-out;
+  box-shadow: 0 0 20px rgba(99, 142, 203, 0.5);
+}
+
+/* --- 5. Preloader --- */
+#preloader {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: #F0F3FA; /* is-bg */
+  z-index: 10002;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: opacity 0.5s ease-out, visibility 0.5s;
+}
+
+.loader-dot {
+  width: 12px;
+  height: 12px;
+  background: linear-gradient(135deg, #8AAEE0, #638ECB);
+  border-radius: 50%;
+  margin: 0 6px;
+  animation: loader-bounce 1.4s infinite ease-in-out;
+  box-shadow: 0 0 8px rgba(99, 142, 203, 0.4);
+}
+
+.loader-dot:nth-child(1) {
+  animation-delay: -0.32s;
+}
+.loader-dot:nth-child(2) {
+  animation-delay: -0.16s;
+}
+
+@keyframes loader-bounce {
+  0%,
+  80%,
+  100% {
+    transform: scale(0);
+    opacity: 0.5;
+  }
+  40% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+.content-wrapper.hidden-for-load {
+  opacity: 0;
+  visibility: hidden;
+}
+
+/* --- 6. Animation Helpers --- */
+.blob {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(100px);
+  opacity: 0.15;
+  animation: blob-move 12s infinite ease-in-out;
+}
+
+@keyframes blob-move {
+  0% {
+    transform: translate(0, 0) scale(1);
+  }
+  50% {
+    transform: translate(60px, -100px) scale(1.1);
+  }
+  100% {
+    transform: translate(-40px, 80px) scale(0.95);
+  }
+}
+
+
+
+.btn-ripple {
+  position: relative;
+  overflow: hidden;
+}
+
+.btn-ripple .ripple {
+  position: absolute;
+  border-radius: 50%;
+  background-color: rgba(255, 255, 255, 0.5);
+  transform: scale(0);
+  animation: ripple-effect 0.6s ease-out;
+}
+
+.btn-ripple-accent .ripple {
+  background-color: rgba(0, 0, 0, 0.1);
+}
+
+@keyframes ripple-effect {
+  to {
+    transform: scale(4);
+    opacity: 0;
+  }
+}
+
+.glowing-border {
+  position: relative;
+  overflow: hidden;
+  padding: 3px;
+}
+
+.glowing-border::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 200%;
+  height: 200%;
+  background: linear-gradient(90deg, transparent, #638ECB, transparent);
+  animation: glowing-rotate 4s linear infinite;
+  transform: translate(-50%, -50%);
+  z-index: 0;
+}
+
+@keyframes glowing-rotate {
+  100% {
+    transform: translate(-50%, -50%) rotate(360deg);
+  }
+}
+
+.glowing-border > * {
+  position: relative;
+  z-index: 1;
+}
+
+#process-path-draw {
+  stroke-dasharray: 1000;
+  stroke-dashoffset: 1000;
+}
+
+/* --- 7. Section Styles --- */
+
+.nav-blur {
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  background-color: rgba(240, 243, 250, 0.8); /* #F0F3FA with opacity */
+  border-bottom: 1px solid rgba(177, 201, 239, 0.6); /* #B1C9EF with opacity */
+  transition: all 0.3s ease-out;
+}
+
+.nav-blur a,
+.nav-blur span,
+.nav-blur .nav-link {
+  color: #395886; /* is-text */
+  font-weight: 500;
+  transition: color 0.3s ease-out;
+}
+
+.nav-blur a:hover,
+.nav-blur .nav-link:hover {
+  color: #638ECB; /* is-accent-dark */
+}
+
+.hero-section {
+  background: linear-gradient(135deg, #D5DEEF 0%, #F0F3FA 100%); /* is-bg-secondary to is-bg */
+  position: relative;
+}
+
+.hero-section h1,
+.hero-section h2,
+.hero-section p {
+  color: #395886; /* is-text */
+}
+
+.card-hover {
+  background: #ffffff;
+  border: 1px solid #B1C9EF; /* is-border */
+  color: #395886; /* is-text */
+  transition: all 0.4s ease-out;
+  border-radius: 16px;
+  position: relative;
+  overflow: hidden;
+}
+
+.card-hover::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(255, 255, 255, 0.3),
+    transparent
+  );
+  transition: left 0.5s ease-out;
+}
+
+.card-hover:hover::before {
+  left: 100%;
+}
+
+.card-hover:hover {
+  transform: translateY(-12px);
+  background: #ffffff;
+  border-color: #8AAEE0; /* is-accent-light */
+  box-shadow: 0 20px 40px -10px rgba(57, 88, 134, 0.08), /* color from is-text */
+    0 0 1px rgba(57, 88, 134, 0.05);
+}
+
+.testimonial-card {
+  background: #ffffff;
+  color: #395886; /* is-text */
+  border: 1px solid #B1C9EF; /* is-border */
+  border-radius: 16px;
+  transition: all 0.3s ease-out;
+}
+
+.testimonial-card:hover {
+  border-color: #8AAEE0; /* is-accent-light */
+  box-shadow: 0 10px 30px -5px rgba(57, 88, 134, 0.07); /* color from is-text */
+}
+
+.testimonial-slider .swiper-pagination-bullet {
+  width: 10px;
+  height: 10px;
+  background-color: #B1C9EF; /* is-border */
+  opacity: 0.6;
+  transition: all 0.3s ease-out;
+  border-radius: 50%;
+}
+
+.testimonial-slider .swiper-pagination-bullet-active {
+  background: linear-gradient(135deg, #8AAEE0, #638ECB);
+  opacity: 1;
+  width: 28px;
+  border-radius: 5px;
+  box-shadow: 0 4px 12px rgba(99, 142, 203, 0.3); /* color from is-accent-dark */
+}
+
+
+/* --- 8. Contact & Footer Styles --- */
+
+.form-input-premium {
+  background: #ffffff;
+  border: 1.5px solid #B1C9EF; /* is-border */
+  color: #395886; /* is-text */
+  padding: 14px 16px;
+  border-radius: 12px;
+  width: 100%;
+  font-size: 15px;
+  font-weight: 500;
+  transition: all 0.3s ease-out;
+  outline: none;
+}
+
+.form-input-premium:focus {
+  border-color: #638ECB; /* is-accent-dark */
+  background: #ffffff;
+  box-shadow: 0 0 0 4px rgba(99, 142, 203, 0.1), /* color from is-accent-dark */
+    inset 0 0 0 1px rgba(99, 142, 203, 0.05);
+}
+
+.form-input-premium::placeholder {
+  color: #638ECB; /* is-accent-dark */
+  font-weight: 400;
+  opacity: 0.7;
+}
+
+.footer-glow-border {
+  position: relative;
+}
+
+.footer-glow-border::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, #8AAEE0, transparent);
+  box-shadow: 0 0 30px rgba(138, 174, 224, 0.3); /* color from is-accent-light */
+}
+
+.footer-link {
+  color: #D5DEEF; /* is-bg-secondary */
+  transition: color 0.3s ease-out;
+  font-weight: 500;
+  position: relative;
+}
+
+.footer-link::after {
+  content: "";
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background: linear-gradient(90deg, #8AAEE0, #B1C9EF);
+  transition: width 0.3s ease-out;
+}
+
+.footer-link:hover::after {
+  width: 100%;
+}
+
+.footer-link:hover {
+  color: #8AAEE0; /* is-accent-light */
+}
+
+.footer-social-icon {
+  width: 44px;
+  height: 44px;
+  background-color: #638ECB; /* is-accent-dark */
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease-out;
+  border: 1px solid #8AAEE0; /* is-accent-light */
+  cursor: pointer;
+}
+
+.footer-social-icon:hover {
+  background: linear-gradient(135deg, #8AAEE0, #B1C9EF);
+  border-color: #8AAEE0;
+  transform: translateY(-4px);
+  box-shadow: 0 8px 20px rgba(138, 174, 224, 0.3);
+}
+
+.footer-social-icon svg {
+  color: #F0F3FA; /* is-bg */
+  transition: color 0.3s ease-out;
+}
+
+.footer-social-icon:hover svg {
+  color: #395886; /* is-text */
+}
+
+/* --- 9. Enhanced Button Styles --- */
+button,
+a.btn-ripple {
+  font-weight: 600;
+  letter-spacing: -0.3px;
+  transition: all 0.3s ease-out;
+}
+
+button:focus-visible,
+a.btn-ripple:focus-visible {
+  outline: 2px solid #638ECB; /* is-accent-dark */
+  outline-offset: 2px;
+}
+
+/* --- 10. Enhanced Accessibility & Utilities --- */
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+a:focus-visible {
+  outline: 2px solid #638ECB; /* is-accent-dark */
+  outline-offset: 2px;
+  border-radius: 4px;
+}
+
+::selection {
+  background-color: #638ECB; /* is-accent-dark */
+  color: #ffffff;
+}
+
+/* --- 11. Responsive Refinements --- */
+@media (max-width: 768px) {
+  body {
+    font-size: 15px;
+  }
+
+  /* Updated for better mobile visibility */
+  h1, .heading-font {
+    /* Tailwind text-4xl */
+    font-size: 2.25rem; 
+    line-height: 2.5rem;
+  }
+
+  h2 {
+    /* Tailwind text-3xl */
+    font-size: 1.875rem;
+    line-height: 2.25rem;
+  }
+
+  .card-hover:hover {
+    transform: translateY(-8px);
+  }
+
+  .footer-social-icon:hover {
+    transform: translateY(-2px);
+  }
+
+  /* Better hero text flow on small screens */
+  .hero-section h1 {
+    font-size: 3rem; /* larger than h1 default */
+    line-height: 1.1;
+  }
+
+  .hero-section p {
+    font-size: 1.125rem; /* text-lg */
+    line-height: 1.75rem;
+  }
+}

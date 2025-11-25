@@ -1,61 +1,13 @@
-# InnerStrength
-
-# Inner Strength - Special Child Neurodevelopment Care
-
-**Inner Strength** is a responsive, interactive web application designed for a neurodevelopmental care center. It serves as a digital gateway for parents seeking specialized therapy for children (Autism, ADHD, etc.), featuring a modern landing page, service details, and access to parent/staff portals.
-
-## 📖 Table of Contents
-- [Features](#-features)
-- [Tech Stack](#-tech-stack)
-- [Project Structure](#-project-structure)
-- [Installation](#-installation)
-- [Configuration](#-configuration)
-
-## ✨ Features
-
-### Frontend Experience
-* **Interactive UI/UX:** Features a custom animated cursor, particle background effects, and a scroll progress bar.
-* **Modern Animations:** Utilizes GSAP for scroll-triggered text reveals and "tilt" effects on service cards.
-* **Responsive Design:** Fully mobile-responsive navigation with a toggleable hamburger menu.
-* **Testimonial Slider:** Integrated Swiper.js carousel to display parent reviews.
-
-### Core Functionality
-* **Service Showcase:** Detailed sections for Occupational Therapy, Speech Therapy, Behavioral Therapy, Physiotherapy, and Special Education.
-* **Team Section:** Profiles of licensed therapists and psychologists.
-* **Contact System:** Functional contact form with PHP session-based success/error message handling.
-* **Portal Integration:** Direct access links for the Parents Portal and Staff/Admin Login.
-
-## 🛠 Tech Stack
-
-**Languages:**
-* ![PHP](https://img.shields.io/badge/PHP-777BB4?style=for-the-badge&logo=php&logoColor=white) (Backend logic & Session management)
-* ![HTML5](https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=html5&logoColor=white)
-* ![JavaScript](https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black)
-
-**Styling:**
-* **Tailwind CSS** (via CDN): Used for utility-first styling and custom color configuration.
-* **Google Fonts:** Uses 'Inter' and 'Playfair Display'.
-
-**Libraries & Plugins:**
-* [GSAP & ScrollTrigger](https://greensock.com/gsap/): For high-performance animations.
-* [Swiper.js](https://swiperjs.com/): For touch-enabled sliders.
-* [Particles.js](https://vincentgarreau.com/particles.js/): For the interactive background.
-
-## 📂 Project Structure
-
-Based on the file references in `index.php`, the project requires the following structure:
-
-```text
-/
-├── index.php                # Main landing page
+Inner Strength - Special Child Neurodevelopment CareNurturing brighter futures for every child. > A comprehensive web platform for a specialized child care center providing evidence-based therapy and neurodevelopmental support.📖 About The ProjectInner Strength is a modern web application designed for a Neurodevelopment Care Center. It serves as both a public-facing landing page to showcase therapy services and a gateway to internal portals for parents and staff.The design focuses on a calming, professional, and trustworthy aesthetic, utilizing soft blue gradients (is-accent-light / is-accent-dark) and fluid animations to represent the gentle care provided to special needs children.🌟 Key FeaturesImmersive UI/UX:Particles.js background for a soothing, interactive atmosphere.GSAP & ScrollTrigger animations for smooth element reveals and tilt effects on cards.Custom Cursor for a unique browsing experience.Comprehensive Service Showcase: Detailed sections for Occupational, Speech, Behavioral, and Physiotherapy.Dynamic Content:Swiper.js powered testimonial slider.Interactive counter animations for statistics.Role-Based Access: Dedicated login portals for Parents and Staff/Admins.Contact Integration: Functional PHP-based contact form with session-based success/error handling.Responsive Design: Fully fluid layout built with Tailwind CSS, optimized for mobile, tablet, and desktop.🛠️ Built WithThe project leverages a modern frontend stack paired with a reliable PHP backend.CategoryTechnologiesFrontendHTML5, Tailwind CSS (CDN), JavaScript (ES6+)BackendPHP (Session Management, Form Handling)LibrariesGSAP, Swiper.js, Particles.jsFontsGoogle Fonts (Inter & Playfair Display)IconsHeroicons (SVG)🎨 Design SystemThe project uses a custom Tailwind configuration to maintain brand identity.Color NameHex CodeUsageis-bg#F0F3FAMain Backgroundis-bg-secondary#D5DEEFSecondary Backgroundsis-accent-light#8AAEE0Gradients, Hoversis-accent-dark#7894bbffButtons, Text Highlightsis-text#5177afffBody Text, Headings🚀 Getting StartedTo run this project locally, you will need a local server environment that supports PHP (like XAMPP, WAMP, MAMP, or Docker).PrerequisitesPHP 7.4+A local server (Apache/Nginx)InstallationClone the repositorygit clone [https://github.com/yourusername/inner-strength.git](https://github.com/yourusername/inner-strength.git)
+Move to server directoryMove the project folder into your server's root directory (e.g., htdocs for XAMPP or www for WAMP).Start the ServerOpen your control panel (e.g., XAMPP Control Panel) and start Apache.Access the applicationOpen your browser and navigate to:http://localhost/inner-strength/index.php📂 Project Structureinner-strength/
 ├── admin_login.php          # Staff login page
-├── contact_form_handler.php # PHP script to process form submissions
-├── landing-style.css        # Custom external CSS
-├── landing-script.js        # Custom external JS for animations/logic
-├── uploads/                 # Directory for images
-│   ├── logo-1639445951.jpg
-│   └── therapists/          # Team member images
-└── portal/
-    └── parents_login.php    # Parent portal login
-🚀 InstallationClone the repository:Bashgit clone [https://github.com/yourusername/inner-strength-care.git](https://github.com/yourusername/inner-strength-care.git)
-Set up a Local Server:Since this project uses PHP, you need a local server environment like XAMPP, WAMP, or MAMP.Deploy Files:Move the project folder into your server's root directory (e.g., htdocs for XAMPP or www for WAMP).Run the Project:Open your browser and navigate to:http://localhost/inner-strength-care/index.php🎨 Color PaletteThe project uses a custom Tailwind configuration focused on calming blue tones:Color NameHex CodeUsageis-bg#F0F3FAMain Backgroundis-bg-secondary#D5DEEFSecondary Backgroundis-border#B1C9EFBordersis-accent-light#8AAEE0Gradients & Highlightsis-accent-dark#7894bbffButtons & Text Highlightsis-text#5177afffPrimary Text Color🤝 ContributingFork the repository.Create a new branch (git checkout -b feature/NewFeature).Commit your changes.Push to the branch.Open a Pull Request.Developed for Inner Strength - Special Child Neurodevelopment Care.
+├── contact_form_handler.php # PHP logic for contact form
+├── index.php                # Main landing page
+├── landing-script.js        # GSAP animations & UI logic
+├── landing-style.css        # Custom CSS overrides
+├── portal/                  # Parent portal directory
+│   └── parents_login.php
+└── uploads/                 # Images and assets
+    ├── logo-1639445951.jpg
+    └── therapists/
+🤝 ContributingContributions are what make the open source community such an amazing place to learn, inspire, and create. Any contributions you make are greatly appreciated.Fork the ProjectCreate your Feature Branch (git checkout -b feature/AmazingFeature)Commit your Changes (git commit -m 'Add some AmazingFeature')Push to the Branch (git push origin feature/AmazingFeature)Open a Pull Request📞 ContactInner Strength Child Care📍 Address: Mirpur 10, Opposite of Panir Tanki, Dhaka-1216📞 Phone: +880 1914-672205📧 Email: innerstrength.childcare@gmail.com<p align="center">&copy; 2024 Inner Strength. All rights reserved.</p>

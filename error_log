@@ -1,0 +1,25 @@
+[11-May-2025 08:02:21 UTC] PHP Fatal error:  Uncaught Error: Call to undefined method mysqli_stmt::get_result() in /home/innerstr/public_html/index.php:26
+Stack trace:
+#0 {main}
+  thrown in /home/innerstr/public_html/index.php on line 26
+[11-May-2025 08:02:29 UTC] PHP Fatal error:  Uncaught Error: Call to undefined method mysqli_stmt::get_result() in /home/innerstr/public_html/index.php:26
+Stack trace:
+#0 {main}
+  thrown in /home/innerstr/public_html/index.php on line 26
+[11-May-2025 08:12:49 UTC] PHP Fatal error:  Uncaught Error: Call to undefined method mysqli_stmt::get_result() in /home/innerstr/public_html/index.php:26
+Stack trace:
+#0 {main}
+  thrown in /home/innerstr/public_html/index.php on line 26
+[11-May-2025 08:25:21 UTC] Login error: Commands out of sync; you can't run this command now
+[11-May-2025 08:25:31 UTC] Login error: Commands out of sync; you can't run this command now
+[11-May-2025 08:36:10 UTC] PHP Fatal error:  Uncaught Error: Call to a member function bind_param() on bool in /home/innerstr/public_html/index.php:62
+Stack trace:
+#0 {main}
+  thrown in /home/innerstr/public_html/index.php on line 62
+[18-May-2025 09:15:46 UTC] PHP Warning:  mysqli::__construct(): (HY000/1044): Access denied for user 'innerstr_inner_strength'@'localhost' to database 'innerstr_inner_strength_db' in /home/innerstr/public_html/config/database.php on line 9
+[21-Jun-2025 18:17:59 UTC] PHP Warning:  mysqli::__construct(): (HY000/2002): No such file or directory in /home/innerstr/public_html/config/database.php on line 9
+[21-Sep-2025 11:06:02 UTC] PHP Warning:  mysqli::__construct(): (HY000/1040): Too many connections in /home/innerstr/public_html/config/database.php on line 9
+[21-Sep-2025 13:01:16 UTC] PHP Warning:  mysqli::__construct(): (HY000/1040): Too many connections in /home/innerstr/public_html/config/database.php on line 9
+[27-Sep-2025 09:00:54 UTC] PHP Warning:  mysqli::__construct(): (HY000/1040): Too many connections in /home/innerstr/public_html/config/database.php on line 9
+[30-Sep-2025 03:20:51 UTC] PHP Warning:  mysqli::__construct(): (HY000/1040): Too many connections in /home/innerstr/public_html/config/database.php on line 9
+[01-Oct-2025 06:07:55 UTC] PHP Warning:  mysqli::__construct(): (HY000/1040): Too many connections in /home/innerstr/public_html/config/database.php on line 9
